@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-            {{$slug}}
+            {{ $slug }}
         </div>
         <div class="bg-gradient-to-br from-purple-900 to-indigo-900 flex flex-wrap item-center justify-center min-h-screen">
             <a href="">Home</a> | <a href="/products">Products</a> | <a href="/about">About</a> | <a href="/contact">Contact</a>

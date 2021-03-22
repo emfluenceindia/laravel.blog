@@ -11,16 +11,35 @@ class Users extends Controller
         echo 'Users';
     }
 
-    function user( $user_name ) {
-        return array(
+    function user( $user ) {
+        /**
+         * Returning a view with value and grab the same in the corresponding View file
+         */
+        //return view( 'user.basic', array( 'user_name' => $user, 'fullname' => 'Subrata Sarkar' ) );
+
+        /**
+         * We can return any complex object to make the method behave like an API call
+         */
+        $objUser = array(
             'id' => 23,
-            'username' => $user_name,
-            'fullname' => 'Subrata Sarkar',
-            'age' => 50,
-            'gender' => 'Male',
-            'location' => 'Kolkata',
-            'country' => 'India'
+            'username' => $user,
+            'basic' => array (
+                'fullname' => 'Subrata Sarkar',
+                'age' => 50,
+                'gender' => 'Male',
+            ),
+            'location' => array(
+                'city' => 'Kolkata',
+                'province' => 'West Bengal',
+                'country' => 'India',
+            ),
+            'contact' => array(
+                'call' => '+919432750266',
+                'whatsApp' => '+918697944988'
+            ),
         );
-        //echo "Welcome back $user_name";
+
+        //echo json_encode( $objUser );
+        return view( 'user.basic', $objUser );
     }
 }

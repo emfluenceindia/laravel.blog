@@ -37,4 +37,4 @@ Route::get( 'blog/{slug}', function( $slug ) {
     return view( 'blog.single', array( 'slug' => $slug ) );
 });
 
-Route::get( "user/{user_name}", [Users::class, 'user'] );
+Route::get( "user/{user}", [Users::class, 'user'] );
