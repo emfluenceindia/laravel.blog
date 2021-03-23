@@ -38,6 +38,7 @@ class Users extends Controller
                 'whatsApp' => '+918697944988'
             ),
         );
+        //dd($objUser);
 
         //echo json_encode( $objUser );
         return view( 'user.basic', $objUser );
